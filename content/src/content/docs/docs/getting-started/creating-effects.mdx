@@ -304,9 +304,9 @@ This feature ensures that even unexpected failures in your application are not l
 import { Effect } from "effect"
 
 const delay = (message: string) =>
-  Effect.promise<string>(
+  Effect.promise(
     () =>
-      new Promise((resolve) => {
+      new Promise<string>((resolve) => {
         setTimeout(() => {
           resolve(message)
         }, 2000)
